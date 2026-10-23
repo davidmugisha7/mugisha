@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tech Solutions | Home</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f4f7fb;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #071b49, #075985);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 17px;
+            color: #dbeafe;
+        }
+
+        /* NAVIGATION */
+        nav {
+            background-color: #f59e0b;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #172033;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+
+        main {
+            max-width: 1150px;
+            margin: auto;
+            padding: 35px 20px;
+        }
+
+        h2 {
+            color: #033f30;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        h3 {
+            color: #087f5b;
+            margin: 15px 0 10px;
+        }
+
+        /* INTRODUCTION */
+        .intro {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .intro h2 {
+            font-size: 30px;
+        }
+
+        .intro p {
+            margin: 10px 0;
+        }
+
+        /* WHY CHOOSE US */
+        .why-us {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0 45px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        .why-us h3 {
+            margin-top: 0;
+        }
+
+        .why-us ul {
+            padding-left: 25px;
+        }
+
+        .why-us li {
+            margin: 8px 0;
+        }
+
+        /* TEAM SECTION */
+        .team-section {
+            padding: 35px 0;
+            text-align: center;
+        }
+
+        .team-section h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .team-description {
+            color: #64748b;
+            margin-bottom: 35px;
+            font-size: 16px;
+        }
+
+        /* TEAM GRID */
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 22px;
+            align-items: stretch;
+        }
+
+        /* MEMBER CARDS */
+        .member-card {
+            background-color: white;
+            padding: 25px 15px;
+            border-radius: 18px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            border-bottom: 5px solid #f59e0b;
+            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+            transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .member-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(7, 27, 73, 0.16);
+        }
+
+        /* MEMBER PHOTOS */
+        .member-card img {
+            display: block;
+            width: 155px;
+            height: 155px;
+            max-width: 100%;
+            margin: 0 auto 18px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            border: 5px solid #dbeafe;
+            outline: 3px solid #f59e0b;
+            outline-offset: 3px;
+            transition: transform 0.4s ease;
+        }
+
+        .member-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* MEMBER NAMES */
+        .member-card h3 {
+            color: #0b3b70;
+            font-size: 18px;
+            line-height: 1.4;
+            margin: 18px 0 10px;
+        }
+
+        /* STUDENT IDS */
+        .member-id {
+            color: #64748b;
+            font-size: 12px;
+            overflow-wrap: anywhere;
+            margin: 8px 0;
+        }
+
+        /* MEMBER ROLE LABEL */
+        .member-role {
+            display: inline-block;
+            background-color: #ecfdf5;
+            color: #047857;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        /* LEARN MORE */
+        .learn-more {
+            text-align: center;
+            margin: 40px 0 15px;
+        }
+
+        .learn-more a {
+            color: #850731;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .learn-more a:hover {
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #9aabd3;
+            color: white;
+            text-align: center;
+            padding: 22px;
+            margin-top: 30px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        /* TABLETS */
+        @media (max-width: 900px) {
+            .team-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            header h1 {
+                font-size: 34px;
+            }
+        }
+
+        /* MOBILE PHONES */
+        @media (max-width: 480px) {
+            header {
+                padding: 30px 15px;
+            }
+
+            header h1 {
+                font-size: 29px;
+            }
+
+            nav {
+                padding: 10px;
+            }
+
+            nav a {
+                margin: 5px 8px;
+                font-size: 14px;
+            }
+
+            main {
+                padding: 25px 15px;
+            }
+
+            .team-container {
+                grid-template-columns: 1fr;
+            }
+
+            .member-card {
+                max-width: 330px;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .member-card img {
+                width: 145px;
+                height: 145px;
+            }
+
+            .team-section h2,
+            .intro h2 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(248, 247, 247);"></body>
+
+<body>
+
+    <header>
+        <h1>Tech Solutions</h1>
+        <p>Your Trusted Partner in Digital Technology</p>
+    </header>
+    <nav>
+        <a href="stu.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Our Services</a>
+        <a href="location.html">Location</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <main>
+
+        <!-- INTRODUCTION -->
+        <section class="intro">
+            <h2>Welcome to Tech Solutions</h2>
+
+            <p>
+                Welcome to Tech Solutions, a technology company
+                committed to providing reliable IT services,
+                technical support, and digital solutions.
+            </p>
+
+            <p>
+                We help individuals, students, and businesses
+                improve their technology skills and solve
+                computer-related problems.
+            </p>
+        </section>
+
+        <section class="why-us">
+            <h3>Why Choose Us?</h3>
+
+            <ul>
+                <li>Professional IT services</li>
+                <li>Practical technology training</li>
+                <li>Reliable technical support</li>
+                <li>Customer-focused digital solutions</li>
+                <li>Commitment to quality and innovation</li>
+            </ul>
+        </section>
+
+
+        <section class="team-section">
+
+            <h2>Meet Our Team Members</h2>
+
+            <p class="team-description">
+                Our team is dedicated to technology,
+                innovation, and delivering quality solutions.
+            </p>
+
+            <div class="team-container">
+
+
+                <div class="member-card">
+
+                    <img src="Capture.PNG" alt="Mugisha David">
+
+                    <h3>David</h3>
+
+                    <p class="member-id">
+                        Student ID: BBICTE252601348
+                    </p>
+
+                    <p class="member-role">Team Member</p>
+
+                </div>
+
+
+                <div class="member-card">
+
+                    <img src="Capture1.PNG" alt="Mucyo">
+
+                    <h3>Mucyo</h3>
+
+                    <p class="member-id">
+                        Student ID: BBICTE252601356
+                    </p>
+
+                    <p class="member-role">Team Member</p>
+
+                </div>
+                
+
+                <div class="member-card">
+
+                    <img src="Capture3.PNG" alt="Derick">
+
+                    <h3>Mugabe</h3>
+
+                    <p class="member-id">
+                        Student ID: BBICTE252601147
+                    </p>
+
+                    <p class="member-role">Team Member</p>
+
+                </div>
+                <div class="member-card">
+
+                    <img src="Capture1.PNG" alt="Mucyo">
+
+                    <h3>Aslan</h3>
+
+                    <p class="member-id">
+                        Student ID: BBICTE252600548
+                    </p>
+
+                    <p class="member-role">Team Member</p>
+
+
+            </div>
+        </section>
+        <table border="1" width="480" height="150" style="border-color: green" bgcolor="yellow">
+            <tr>
+                <td><b>OUR CREDENTIALS</b></td>
+                <td><b>REG Number</b></td>
+            </tr>
+
+            <tr>
+                <td>Mugisha david</td>
+                <td>BBICTE252601348</td>
+            </tr>
+            <tr>
+                <td>Mucyo Nonette</td>
+                <td>BBICTE252601356</td>
+            </tr>
+            <tr>
+                <td>MUSANA Aslan</td>
+                <td>BBICTE252600548</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Row 1 Cell 1</td>
+                <td>Row 1 Cell 2</td>
+                <td>Row 1 Cell 3</td>
+            </tr>
+            <tr>
+                <td>Row 2 Cell2</td>
+                <td>Row 2 Cell 3</td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td colspan="3">Row 3 Cell 1</td>
+            </tr>
+        </table>
+
+        <section class="learn-more">
+            <p>
+                Learn more about our
+                <a href="about.html">company</a>
+                or explore
+                <a href="services.html">our services</a>.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Tech Solutions. All Rights Reserved.</p>
+        <p>
+            Professional IT Services |
+            Training |
+            Technical Support
+        </p>
+    </footer>
+
+</body>
+
+</html>

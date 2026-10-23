@@ -1,0 +1,36 @@
+body{
+    background:linear-gradient(120deg, #00c6ff, #0072ff, #65795d, #3d4638)
+}
+header h1{
+    text-align: center;
+    text-shadow: none;
+    text-decoration: dashed;
+}
+a {
+  color: white;
+  background: linear-gradient(135deg, #877e91, #0c0e0f);
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
